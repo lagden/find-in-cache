@@ -27,6 +27,7 @@ function caching(key, value, ttl) {
 	if (ttl && ttl > 0) {
 		args = ['EX', ttl]
 	}
+
 	return cache.set(cacheName, value, ...args)
 }
 
