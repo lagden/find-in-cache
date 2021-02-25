@@ -27,11 +27,12 @@ $ npm i -S @tadashi/find-in-cache
 
 ## Environment variable
 
-variable              | type     | required    | default        | description
---------              | -------- | ----------- | -------------- | ------------
-REDIS                 | string   | no          | 127.0.0.1:6379 | Addresses to connect
-REDIS_PWD             | string   | no          | -              | Redis password
-CLEAR_CACHE_FIRST_RUN | boolean  | no          | true           | Clear cache when app start
+variable              | type     | required    | default                | description
+--------              | -------- | ----------- | --------------         | ------------
+REDIS                 | string   | no          | 127.0.0.1:6379         | Addresses to connect
+REDIS_PWD             | string   | no          | -                      | Redis password
+REDIS_CACHE_NAMESPACE | string   | no          | \_app\_find\_in\_cache | Avoid conflicts between caches
+CLEAR_CACHE_FIRST_RUN | boolean  | no          | true                   | Clear cache when app is started
 
 See more about `REDIS` and `REDIS_PWD` in:  
 https://github.com/lagden/connect-redis
