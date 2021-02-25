@@ -1,0 +1,65 @@
+{
+  "name": "@tadashi/find-in-cache",
+  "version": "1.0.0",
+  "description": "Find data in cache",
+  "main": "src/index.js",
+  "files": [
+    "src",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "pretest": "xo",
+    "test": "ava -s",
+    "precoverage": "npm run pretest",
+    "coverage": "nyc --reporter=text-summary --reporter=lcov ava -s"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/lagden/find-in-cache.git"
+  },
+  "keywords": [
+    "cache",
+    "redis",
+    "lib",
+    "find"
+  ],
+  "engines": {
+    "node": ">=12"
+  },
+  "author": "Thiago Lagden",
+  "license": "MIT",
+  "homepage": "https://github.com/lagden/find-in-cache#readme",
+  "bugs": {
+    "url": "https://github.com/lagden/find-in-cache/issues"
+  },
+  "xo": {
+    "envs": [
+      "node"
+    ],
+    "semicolon": false,
+    "rules": {
+      "camelcase": [
+        "error",
+        {
+          "properties": "never"
+        }
+      ],
+      "capitalized-comments": 0,
+      "unicorn/prevent-abbreviations": 0
+    }
+  },
+  "dependencies": {
+    "@tadashi/cache-redis": "4.3.0",
+    "@tadashi/hash": "1.0.0"
+  },
+  "peerDependencies": {
+    "ioredis": ">= 4.19.4 < 5"
+  },
+  "devDependencies": {
+    "ava": "3.15.0",
+    "ioredis": "4.22.0",
+    "nyc": "15.1.0",
+    "xo": "0.38.1"
+  }
+}
