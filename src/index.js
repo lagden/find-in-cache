@@ -24,7 +24,8 @@ async function find(key) {
 function caching(key, value, ttl) {
 	const cacheName = hash(key)
 	let args = []
-	if (ttl && ttl > 0) {
+
+	if (ttl && Number.isNaN(ttl) === false && ttl > 0) {
 		args = ['EX', ttl]
 	}
 
