@@ -4,16 +4,12 @@
 [![Node.js CI][ci-img]][ci]
 [![Coverage Status][coveralls-img]][coveralls]
 
-[![XO code style][xo-img]][xo]
-
 [npm-img]:         https://img.shields.io/npm/v/@tadashi/find-in-cache.svg
 [npm]:             https://www.npmjs.com/package/@tadashi/find-in-cache
 [ci-img]:          https://github.com/lagden/find-in-cache/workflows/Node.js%20CI/badge.svg
 [ci]:              https://github.com/lagden/find-in-cache/actions?query=workflow%3A%22Node.js+CI%22
 [coveralls-img]:   https://coveralls.io/repos/github/lagden/find-in-cache/badge.svg?branch=master
 [coveralls]:       https://coveralls.io/github/lagden/find-in-cache?branch=master
-[xo-img]:          https://img.shields.io/badge/code_style-XO-5ed9c7.svg
-[xo]:              https://github.com/sindresorhus/xo
 
 
 Find data in cache
@@ -64,20 +60,16 @@ ttl         | number   | no          | -           | cache lifetime in seconds
 ## Usage
 
 ```js
-'use strict'
+import {find, caching} from '@tadashi/find-in-cache'
 
-const {find, caching} = require('@tadashi/find-in-cache');
+await find('foo')
+// => undefined
 
-(async () => {
-  await find('foo')
-  // => undefined
+await caching('foo', 'bar', 30)
+// => true
 
-  await caching('foo', 'bar', 30)
-  // => true
-
-  await find('foo')
-  // => bar
-})()
+await find('foo')
+// => bar
 ```
 
 
