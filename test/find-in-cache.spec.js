@@ -15,7 +15,6 @@ test.serial('caching', async t => {
 // Clear cache - First Run
 test.serial('finding - First Run', async t => {
 	const res = await find('test')
-	console.log(res)
 	t.is(res, undefined)
 })
 
@@ -36,3 +35,9 @@ test.serial('finding - Third Run', async t => {
 	const res = await find('test')
 	t.is(res, 'Apenas um show')
 })
+
+// // Find Object key
+// test.serial('finding - Object key', async t => {
+// 	const res = await find({a: 123})
+// 	t.is(res, undefined)
+// })

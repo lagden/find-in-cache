@@ -1321,15 +1321,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tadashi/cache-redis@npm:6.0.0":
-  version: 6.0.0
-  resolution: "@tadashi/cache-redis@npm:6.0.0"
+"@tadashi/cache-redis@npm:6.1.0":
+  version: 6.1.0
+  resolution: "@tadashi/cache-redis@npm:6.1.0"
   dependencies:
     "@tadashi/connect-redis": 1.0.1
     "@tadashi/jsonb": 3.1.0
   peerDependencies:
     ioredis: ">= 4.19.4 < 5"
-  checksum: 39bdacaf228a30a3c0aa6b16a410209a952e076b45ee358d2f825ad1aa0017233e27cd368b0e5ea1b464fea95c2ec7160d95ee579116016bc92d73780c5ef4f9
+  checksum: 5a13a7ed7d77e4622befe4d601f4c446ad1dfe87c51cf202cd375118e3519a5955c6e892eb95164c75278c9021c06b7232180441bdd73196040dd86ff87ca18c
   languageName: node
   linkType: hard
 
@@ -1350,7 +1350,7 @@ __metadata:
     "@babel/eslint-parser": 7.14.7
     "@babel/plugin-syntax-top-level-await": 7.14.5
     "@babel/preset-env": 7.14.7
-    "@tadashi/cache-redis": 6.0.0
+    "@tadashi/cache-redis": 6.1.0
     "@tadashi/hash": 2.0.0
     ava: 3.15.0
     c8: 7.7.3
@@ -1458,11 +1458,11 @@ __metadata:
   linkType: hard
 
 "acorn@npm:^8.0.4":
-  version: 8.4.0
-  resolution: "acorn@npm:8.4.0"
+  version: 8.4.1
+  resolution: "acorn@npm:8.4.1"
   bin:
     acorn: bin/acorn
-  checksum: 51d8d3ec3e33dcf325e5887909a1ac36afb351522b0179afadcb44ae8eb612417c6db1bcd4abdfaff58fea969d272baf8e809801075e15b5d5993933139ea2f9
+  checksum: 37720df0ecd48baf87506aff228aedc7e73379df9e9309f0b89aaff18bb3d08af892d47c0f19d5ef1723066ca74157b00adcfea9a62b21a493c91babb7d22bc3
   languageName: node
   linkType: hard
 

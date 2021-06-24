@@ -24,7 +24,7 @@ export function caching(key, value, ttl) {
 	let args = []
 
 	if (ttl && Number.isNaN(ttl) === false && ttl > 0) {
-		args = ['EX', ttl]
+		args = ['EXAT', ttl]
 	}
 
 	return cache.set(cacheName, value, ...args)
