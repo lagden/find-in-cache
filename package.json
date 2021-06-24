@@ -1,63 +1,61 @@
 {
   "name": "@tadashi/find-in-cache",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "Find data in cache",
-  "main": "src/index.js",
-  "files": [
-    "src",
-    "LICENSE",
-    "README.md"
-  ],
-  "scripts": {
-    "pretest": "xo",
-    "test": "c8 --reporter=text --reporter=lcov ava"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/lagden/find-in-cache.git"
-  },
   "keywords": [
     "cache",
     "redis",
     "lib",
     "find"
   ],
+  "type": "module",
+  "main": "src/find-in-cache.js",
+  "files": [
+    "src"
+  ],
   "engines": {
-    "node": ">=12"
+    "node": ">=14.16"
   },
   "author": "Thiago Lagden",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/lagden/find-in-cache.git"
+  },
   "homepage": "https://github.com/lagden/find-in-cache#readme",
   "bugs": {
     "url": "https://github.com/lagden/find-in-cache/issues"
   },
-  "xo": {
-    "envs": [
-      "node"
-    ],
-    "semicolon": false,
-    "rules": {
-      "camelcase": [
-        "error",
-        {
-          "properties": "never"
-        }
-      ],
-      "capitalized-comments": 0,
-      "unicorn/prevent-abbreviations": 0
-    }
+  "scripts": {
+    "eslint": "eslint --config .eslintrc.cjs --ext .js --ignore-path .gitignore .",
+    "pretest": "npm run eslint",
+    "test": "c8 --reporter=text --reporter=lcov ava"
   },
   "dependencies": {
-    "@tadashi/cache-redis": "5.0.1",
-    "@tadashi/hash": "1.0.0"
+    "@tadashi/cache-redis": "6.0.0",
+    "@tadashi/hash": "2.0.0"
   },
   "peerDependencies": {
     "ioredis": ">= 4.19.4 < 5"
   },
   "devDependencies": {
+    "@babel/core": "7.14.6",
+    "@babel/eslint-parser": "7.14.7",
+    "@babel/plugin-syntax-top-level-await": "7.14.5",
+    "@babel/preset-env": "7.14.7",
     "ava": "3.15.0",
-    "c8": "7.7.1",
-    "ioredis": "4.27.1",
-    "xo": "0.39.1"
+    "c8": "7.7.3",
+    "eslint": "7.29.0",
+    "eslint-config-xo": "0.37.0",
+    "eslint-plugin-unicorn": "33.0.1",
+    "ioredis": "4.27.6"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ],
+    "plugins": [
+      "@babel/plugin-syntax-top-level-await"
+    ]
   }
 }

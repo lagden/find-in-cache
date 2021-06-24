@@ -1,8 +1,6 @@
-'use strict'
-
-const test = require('ava')
-const {find, caching} = require('../src')
-const cache = require('../src/lib/cache')
+import test from 'ava'
+import {find, caching} from '../src/find-in-cache.js'
+import cache from '../src/lib/cache.js'
 
 test.before(async () => {
 	await cache.clear()

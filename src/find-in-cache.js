@@ -1,13 +1,11 @@
-'use strict'
-
-const hash = require('@tadashi/hash')
-const cache = require('./lib/cache')
+import hash from '@tadashi/hash'
+import cache from './lib/cache.js'
 
 let {
-	CLEAR_CACHE_FIRST_RUN: firstRun = true
+	CLEAR_CACHE_FIRST_RUN: firstRun = true,
 } = process.env
 
-async function find(key) {
+export async function find(key) {
 	const cacheName = hash(key)
 
 	if (firstRun) {
@@ -21,7 +19,7 @@ async function find(key) {
 	}
 }
 
-function caching(key, value, ttl) {
+export function caching(key, value, ttl) {
 	const cacheName = hash(key)
 	let args = []
 
@@ -31,5 +29,3 @@ function caching(key, value, ttl) {
 
 	return cache.set(cacheName, value, ...args)
 }
-
-module.exports = {find, caching}
