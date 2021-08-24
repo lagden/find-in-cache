@@ -6,8 +6,8 @@
 
 [npm-img]:         https://img.shields.io/npm/v/@tadashi/find-in-cache.svg
 [npm]:             https://www.npmjs.com/package/@tadashi/find-in-cache
-[ci-img]:          https://github.com/lagden/find-in-cache/workflows/Node.js%20CI/badge.svg
-[ci]:              https://github.com/lagden/find-in-cache/actions?query=workflow%3A%22Node.js+CI%22
+[ci-img]:          https://github.com/lagden/find-in-cache/actions/workflows/nodejs.yml/badge.svg
+[ci]:              https://github.com/lagden/find-in-cache/actions/workflows/nodejs.yml
 [coveralls-img]:   https://coveralls.io/repos/github/lagden/find-in-cache/badge.svg?branch=master
 [coveralls]:       https://coveralls.io/github/lagden/find-in-cache?branch=master
 
