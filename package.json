@@ -1,6 +1,6 @@
 {
   "name": "@tadashi/find-in-cache",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "description": "Find data in cache",
   "keywords": [
     "cache",
@@ -29,24 +29,23 @@
   "scripts": {
     "eslint": "eslint --config .eslintrc.yml --ext .js --ignore-path .gitignore .",
     "pretest": "npm run eslint",
-    "test": "c8 --reporter=text --reporter=lcov ava"
+    "docker:rm": "docker kill redis-test; docker rm redis-test",
+    "docker": "docker run -p 6379:6379 --name redis-test -d redis:latest",
+    "test": "c8 --reporter=text --reporter=lcov ava --serial"
   },
   "dependencies": {
-    "@tadashi/cache-redis": "6.3.0",
-    "@tadashi/hash": "2.1.0"
+    "@tadashi/cache-redis": "6.3.1",
+    "@tadashi/hash": "3.0.0"
   },
   "peerDependencies": {
     "ioredis": ">= 4.19.4 < 6"
   },
   "devDependencies": {
-    "@babel/core": "7.17.8",
-    "@babel/eslint-parser": "7.17.0",
-    "ava": "4.1.0",
-    "c8": "7.11.0",
-    "eslint": "8.12.0",
-    "eslint-config-xo": "0.40.0",
-    "eslint-plugin-unicorn": "42.0.0",
-    "ioredis": "5.0.3"
-  },
-  "babel": {}
+    "ava": "5.1.0",
+    "c8": "7.12.0",
+    "eslint": "8.28.0",
+    "eslint-config-xo": "0.43.1",
+    "eslint-plugin-unicorn": "45.0.1",
+    "ioredis": "5.2.4"
+  }
 }

@@ -6,7 +6,7 @@ let {
 } = process.env
 
 export async function find(key) {
-	const cacheName = hash(key)
+	const cacheName = hash(key, {alg: 'md5', encoding: 'hex'})
 
 	if (firstRun) {
 		firstRun = false
@@ -20,7 +20,7 @@ export async function find(key) {
 }
 
 export function caching(key, value, ttl) {
-	const cacheName = hash(key)
+	const cacheName = hash(key, {alg: 'md5', encoding: 'hex'})
 	let args = []
 
 	if (ttl && Number.isNaN(ttl) === false && ttl > 0) {
@@ -29,3 +29,5 @@ export function caching(key, value, ttl) {
 
 	return cache.set(cacheName, value, ...args)
 }
+
+export {default as cache} from './lib/cache.js'

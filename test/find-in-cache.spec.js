@@ -1,6 +1,9 @@
 import test from 'ava'
-import {find, caching} from '../src/find-in-cache.js'
-import cache from '../src/lib/cache.js'
+import {
+	find,
+	caching,
+	cache,
+} from '../src/find-in-cache.js'
 
 test.before(async () => {
 	await cache.clear()

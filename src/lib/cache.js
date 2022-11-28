@@ -1,8 +1,8 @@
 import Cache from '@tadashi/cache-redis'
 
 const {
-	CACHE_REDIS_PREFIX = '',
-	CACHE_REDIS_NAMESPACE = '_lib_find_in_cache',
+	CACHE_REDIS_PREFIX = 'lib',
+	CACHE_REDIS_NAMESPACE = 'find_in_cache',
 	CACHE_REDIS_DB = 0,
 } = process.env
 
