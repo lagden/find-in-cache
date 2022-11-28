@@ -23,7 +23,7 @@ jobs:
         uses: actions/checkout@latest
 
       - name: Install pnpm
-        uses: pnpm/action-setup@latest
+        uses: pnpm/action-setup@v2.5.0
         with:
           version: 7
           # run_install: false
