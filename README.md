@@ -8,8 +8,8 @@
 [npm]:             https://www.npmjs.com/package/@tadashi/find-in-cache
 [ci-img]:          https://github.com/lagden/find-in-cache/actions/workflows/nodejs.yml/badge.svg
 [ci]:              https://github.com/lagden/find-in-cache/actions/workflows/nodejs.yml
-[coveralls-img]:   https://coveralls.io/repos/github/lagden/find-in-cache/badge.svg?branch=master
-[coveralls]:       https://coveralls.io/github/lagden/find-in-cache?branch=master
+[coveralls-img]:   https://coveralls.io/repos/github/lagden/find-in-cache/badge.svg?branch=main
+[coveralls]:       https://coveralls.io/github/lagden/find-in-cache?branch=main
 
 
 Find data in cache
@@ -23,14 +23,14 @@ $ npm i -S @tadashi/find-in-cache
 
 ## Environment variable
 
-variable              | type     | required    | default                | description
---------              | -------- | ----------- | --------------         | ------------
-REDIS                 | string   | no          | 127.0.0.1:6379         | Addresses to connect
-REDIS_PWD             | string   | no          | -                      | Redis password
-CACHE_REDIS_PREFIX    | string   | no          | -                      | Key prefix
-CACHE_REDIS_NAMESPACE | string   | no          | \_lib\_find\_in\_cache | Avoid conflicts between caches
-CACHE_REDIS_DB        | number   | no          | 0                      | Number of database
-CLEAR_CACHE_FIRST_RUN | boolean  | no          | true                   | Clear cache when app is started
+variable              | type     | required    | default            | description
+--------              | -------- | ----------- | --------------     | ------------
+REDIS                 | string   | no          | 127.0.0.1:6379     | Addresses to connect
+REDIS_PWD             | string   | no          | -                  | Redis password
+CACHE_REDIS_PREFIX    | string   | no          | lib                | Key prefix
+CACHE_REDIS_NAMESPACE | string   | no          | find\_in\_cache    | Avoid conflicts between caches
+CACHE_REDIS_DB        | number   | no          | 0                  | Number of database
+CLEAR_CACHE_FIRST_RUN | boolean  | no          | true               | Clear cache when app is started
 
 See more about `REDIS` and `REDIS_PWD` in:  
 https://github.com/lagden/connect-redis
@@ -60,7 +60,7 @@ ttl         | number   | no          | -           | cache lifetime in seconds
 ## Usage
 
 ```js
-import {find, caching} from '@tadashi/find-in-cache'
+import {find, caching, cache} from '@tadashi/find-in-cache'
 
 await find('foo')
 // => undefined
@@ -70,6 +70,9 @@ await caching('foo', 'bar', 30)
 
 await find('foo')
 // => bar
+
+await cache.clear()
+// => cache was cleared
 ```
 
 
