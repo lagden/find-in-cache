@@ -1,46 +1,53 @@
-import test from 'ava'
+#!/usr/bin/env node
+
+import {test, before, after} from 'node:test'
+import assert from 'node:assert/strict'
 import {
 	find,
 	caching,
 	cache,
 } from '../src/find-in-cache.js'
 
-test.before(async () => {
+before(async () => {
 	await cache.clear()
 })
 
+after(() => {
+	process.exit(0)
+})
+
 // Caching data forever
-test.serial('caching', async t => {
+test('caching', async () => {
 	const res = await caching('test', 'Apenas um show', 30)
-	t.is(res, true)
+	assert.equal(res, true)
 })
 
 // Clear cache - First Run
-test.serial('finding - First Run', async t => {
+test('finding - First Run', async () => {
 	const res = await find('test')
-	t.is(res, undefined)
+	assert.equal(res, undefined)
 })
 
 // None
-test.serial('finding - Second Run', async t => {
+test('finding - Second Run', async () => {
 	const res = await find('test')
-	t.is(res, undefined)
+	assert.equal(res, undefined)
 })
 
 // Caching data again
-test.serial('caching again', async t => {
+test('caching again', async () => {
 	const res = await caching('test', 'Apenas um show')
-	t.is(res, true)
+	assert.equal(res, true)
 })
 
 // Yeahh
-test.serial('finding - Third Run', async t => {
+test('finding - Third Run', async () => {
 	const res = await find('test')
-	t.is(res, 'Apenas um show')
+	assert.equal(res, 'Apenas um show')
 })
 
 // // Find Object key
-// test.serial('finding - Object key', async t => {
+// test('finding - Object key', async () => {
 // 	const res = await find({a: 123})
-// 	t.is(res, undefined)
+// 	assert.equal(res, undefined)
 // })

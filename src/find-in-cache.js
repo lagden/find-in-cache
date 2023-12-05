@@ -1,12 +1,15 @@
 import hash from '@tadashi/hash'
+import {parseBoolean} from '@tadashi/common'
 import cache from './lib/cache.js'
 
-let {
-	CLEAR_CACHE_FIRST_RUN: firstRun = true,
+const {
+	CLEAR_CACHE_FIRST_RUN = true,
 } = process.env
 
+let firstRun = parseBoolean(CLEAR_CACHE_FIRST_RUN)
+
 export async function find(key) {
-	const cacheName = hash(key, {alg: 'md5', encoding: 'hex'})
+	const cacheName = hash(key, {alg: 'sha1', encoding: 'hex'})
 
 	if (firstRun) {
 		firstRun = false
@@ -19,12 +22,13 @@ export async function find(key) {
 	}
 }
 
-export function caching(key, value, ttl) {
-	const cacheName = hash(key, {alg: 'md5', encoding: 'hex'})
+export function caching(key, value, _ttl) {
+	const cacheName = hash(key, {alg: 'sha1', encoding: 'hex'})
 	let args = []
 
+	const ttl = Number(_ttl)
 	if (ttl && Number.isNaN(ttl) === false && ttl > 0) {
-		args = ['EXAT', ttl]
+		args = ['EX', ttl]
 	}
 
 	return cache.set(cacheName, value, ...args)
