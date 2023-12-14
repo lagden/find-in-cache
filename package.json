@@ -1,6 +1,6 @@
 {
   "name": "@tadashi/find-in-cache",
-  "version": "2.4.0",
+  "version": "2.4.1",
   "description": "Find data in cache",
   "keywords": [
     "cache",
@@ -30,16 +30,14 @@
   "scripts": {
     "eslint": "eslint --config .eslintrc.yml --ext .js --ignore-path .gitignore .",
     "pretest": "npm run eslint",
-    "docker:rm": "docker kill redis-test; docker rm redis-test",
-    "docker": "docker run -p 6379:6379 --name redis-test -d redis:latest",
+    "docker:rm": "docker kill find-cache-redis-test; docker rm find-cache-redis-test",
+    "docker": "docker run -p 6379:6379 --name find-cache-redis-test -d redis:latest",
     "test": "c8 --reporter=text --reporter=text-summary --reporter=lcovonly --reporter=cobertura node --test test/*.spec.js"
   },
   "dependencies": {
-    "@tadashi/common": "4.2.0",
+    "@tadashi/cache-redis": "6.4.1",
+    "@tadashi/common": "4.2.1",
     "@tadashi/hash": "3.0.1"
-  },
-  "peerDependencies": {
-    "@tadashi/cache-redis": "6.4.0"
   },
   "devDependencies": {
     "c8": "8.0.1",

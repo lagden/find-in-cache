@@ -26,8 +26,8 @@ export function caching(key, value, _ttl) {
 	const cacheName = hash(key, {alg: 'sha1', encoding: 'hex'})
 	let args = []
 
-	const ttl = Number(_ttl)
-	if (ttl && Number.isNaN(ttl) === false && ttl > 0) {
+	const ttl = globalThis.Number(_ttl)
+	if (ttl && globalThis.Number.isInteger(ttl) && ttl > 0) {
 		args = ['EX', ttl]
 	}
 

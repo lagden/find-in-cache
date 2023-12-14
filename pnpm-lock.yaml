@@ -6,11 +6,11 @@ settings:
 
 dependencies:
   '@tadashi/cache-redis':
-    specifier: 6.4.0
-    version: 6.4.0(@tadashi/connect-redis@2.4.0)(ioredis@5.3.2)
+    specifier: 6.4.1
+    version: 6.4.1(@tadashi/connect-redis@2.4.0)(ioredis@5.3.2)
   '@tadashi/common':
-    specifier: 4.2.0
-    version: 4.2.0
+    specifier: 4.2.1
+    version: 4.2.1
   '@tadashi/hash':
     specifier: 3.0.1
     version: 3.0.1
@@ -84,7 +84,7 @@ packages:
       ajv: 6.12.6
       debug: 4.3.4
       espree: 9.6.1
-      globals: 13.23.0
+      globals: 13.24.0
       ignore: 5.3.0
       import-fresh: 3.3.0
       js-yaml: 4.1.0
@@ -164,8 +164,8 @@ packages:
       fastq: 1.15.0
     dev: true
 
-  /@tadashi/cache-redis@6.4.0(@tadashi/connect-redis@2.4.0)(ioredis@5.3.2):
-    resolution: {integrity: sha512-7bEklzhFOwwXf58I88neOiJxXbRSzMjjOqA7jSDVNA19x1f16qH2s2xSaJa4urbUVl3hZaDAupMHTEK0rhYV6w==}
+  /@tadashi/cache-redis@6.4.1(@tadashi/connect-redis@2.4.0)(ioredis@5.3.2):
+    resolution: {integrity: sha512-HvrxiaAoAjcYN7+B3vu1Zl4RvwMp2KMUbS6QRuALFf0N2M4+UoW5qT7Wg0RrI5StDMcnwqE5vTK4FYX2CRDhzw==}
     engines: {node: '>=16'}
     peerDependencies:
       '@tadashi/connect-redis': '>= 2.4.0 < 3'
@@ -176,8 +176,8 @@ packages:
       ioredis: 5.3.2
     dev: false
 
-  /@tadashi/common@4.2.0:
-    resolution: {integrity: sha512-kBlwX4EraGjHOl7ZTV67bdCurmr9cKzMlq9tigIEMPuEDpEBvkleB/aGjkPgZId96TfTx5HV9klRMmqMAUcs3g==}
+  /@tadashi/common@4.2.1:
+    resolution: {integrity: sha512-TD8tSZX5v18fKNOPt9rzNeTj5K1ElgIgQh9lM+yNC/9ywjYDZAbsSLIOsjwwTXlaan8lrJyYj/2CscVjGeoEtg==}
     engines: {node: '>=16'}
     dev: false
 
@@ -499,7 +499,7 @@ packages:
       file-entry-cache: 6.0.1
       find-up: 5.0.0
       glob-parent: 6.0.2
-      globals: 13.23.0
+      globals: 13.24.0
       graphemer: 1.4.0
       ignore: 5.3.0
       imurmurhash: 0.1.4
@@ -644,8 +644,8 @@ packages:
       path-is-absolute: 1.0.1
     dev: true
 
-  /globals@13.23.0:
-    resolution: {integrity: sha512-XAmF0RjlrjY23MA51q3HltdlGxUpXPvg0GioKiD9X6HD28iMjo2dKC8Vqwm7lne4GNr78+RHTfliktR6ZH09wA==}
+  /globals@13.24.0:
+    resolution: {integrity: sha512-AhO5QUcj8llrbG09iWhPU2B204J1xnPeL8kQmVorSsy+Sjj1sk8gIyh6cUocGmH4L0UuhAJy+hJMRA4mgA4mFQ==}
     engines: {node: '>=8'}
     dependencies:
       type-fest: 0.20.2

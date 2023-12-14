@@ -1,6 +1,4 @@
-#!/usr/bin/env node
-
-import {test, before, after} from 'node:test'
+import {test, after} from 'node:test'
 import assert from 'node:assert/strict'
 import {
 	find,
@@ -8,12 +6,8 @@ import {
 	cache,
 } from '../src/find-in-cache.js'
 
-before(async () => {
-	await cache.clear()
-})
-
 after(() => {
-	process.exit(0)
+	cache.redis.disconnect(false)
 })
 
 // Caching data forever
@@ -48,6 +42,7 @@ test('finding - Third Run', async () => {
 
 // // Find Object key
 // test('finding - Object key', async () => {
+// 	await caching({a: 123}, 'Apenas um show')
 // 	const res = await find({a: 123})
-// 	assert.equal(res, undefined)
+// 	assert.equal(res, 'Apenas um show')
 // })

@@ -18,7 +18,7 @@ Find data in cache
 ## Install
 
 ```
-$ npm i -S @tadashi/find-in-cache
+$ npm i @tadashi/find-in-cache
 ```
 
 ## Environment variable
@@ -28,7 +28,7 @@ variable              | type     | required    | default            | descriptio
 REDIS                 | string   | no          | 127.0.0.1:6379     | Addresses to connect
 REDIS_PWD             | string   | no          | -                  | Redis password
 CACHE_REDIS_PREFIX    | string   | no          | lib                | Key prefix
-CACHE_REDIS_NAMESPACE | string   | no          | find\_in\_cache    | Avoid conflicts between caches
+CACHE_REDIS_NAMESPACE | string   | no          | find-in-cache      | Avoid conflicts between caches
 CACHE_REDIS_DB        | number   | no          | 0                  | Number of database
 CLEAR_CACHE_FIRST_RUN | boolean  | no          | true               | Clear cache when app is started
 
@@ -74,6 +74,11 @@ await find('foo')
 await cache.clear()
 // => cache was cleared
 ```
+
+
+## Donate ❤️
+
+BTC: bc1q7famhuj5f25n6qvlm3sssnymk2qpxrfwpyq7g4
 
 
 ## License
