@@ -36,14 +36,14 @@ $ npm i @tadashi/find-in-cache
 
 ## API
 
-### find(key: string): Promise<*>
+### find(key): Promise<*>
 
 | parameter   | type     | required    | default     | description |
 | --------    | -------- | ----------- | ----------- | ------------ |
 | key         | string   | yes         | -           | The key for which to find the cached value |
 
 
-### caching(key: string, value: any, ttl: string\|number): Promise\<Object\>
+### caching(key, value, ttl): Promise\<Object\>
 
 | parameter   | type           | required    | default     | description |
 | --------    | -------------- | ----------- | ----------- | ------------ |
