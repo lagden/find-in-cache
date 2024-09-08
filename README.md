@@ -31,29 +31,30 @@ $ npm i @tadashi/find-in-cache
 | CACHE_REDIS_NAMESPACE | string     | no          | find-in-cache      | Avoid conflicts between caches |
 | CACHE_REDIS_DB        | number     | no          | 0                  | Number of database |
 | CACHE_REDIS_OPTIONS   | JSONString | no          | {}                 | [See configuration options](https://redis.github.io/ioredis/interfaces/CommonRedisOptions.html) |
-| CLEAR_CACHE_FIRST_RUN | boolean    | no          | true               | Clear cache when app is started
+| CLEAR_CACHE_FIRST_RUN | boolean    | no          | true               | Clear cache when app is started |
 
 
 ## API
 
 ### find(key: string): Promise<*>
 
-parameter   | type     | required    | default     | description
---------    | -------- | ----------- | ----------- | ------------
-key         | string   | yes         | -           | The key for which to find the cached value
+| parameter   | type     | required    | default     | description |
+| --------    | -------- | ----------- | ----------- | ------------ |
+| key         | string   | yes         | -           | The key for which to find the cached value |
 
 
-### caching(key: string, value: any, ttl: string|number): Promise<Object>
+### caching(key: string, value: any, ttl: string\|number): Promise\<Object\>
 
-parameter   | type           | required    | default     | description
---------    | -------------- | ----------- | ----------- | ------------
-key         | string         | yes         | -           | The key under which the value will be stored
-value       | any            | yes         | -           | The value to be cached
-ttl         | string\|number | no          | -           | The time-to-live for the cache entry, in seconds
+| parameter   | type           | required    | default     | description |
+| --------    | -------------- | ----------- | ----------- | ------------ |
+| key         | string         | yes         | -           | The key under which the value will be stored |
+| value       | any            | yes         | -           | The value to be cached |
+| ttl         | string\|number | no          | -           | The time-to-live for the cache entry, in seconds |
 
 
 > [!IMPORTANT]  
 > If the `ttl` is not set, the cache will last forever
+
 
 ## Usage
 
