@@ -1,6 +1,6 @@
 {
   "name": "@tadashi/find-in-cache",
-  "version": "2.4.1",
+  "version": "3.0.0",
   "description": "Find data in cache",
   "keywords": [
     "cache",
@@ -9,13 +9,22 @@
     "find"
   ],
   "type": "module",
-  "main": "src/find-in-cache.js",
-  "exports": "./src/find-in-cache.js",
+  "main": "./src/find-in-cache.js",
+  "types": "./types/find-in-cache.d.ts",
+  "exports": {
+    ".": {
+      "import": "./src/find-in-cache.js",
+      "types": "./types/find-in-cache.d.ts"
+    }
+  },
   "files": [
-    "src"
+    "LICENSE",
+    "README.md",
+    "src",
+    "types"
   ],
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   },
   "author": "Thiago Lagden",
   "license": "MIT",
@@ -28,21 +37,25 @@
     "url": "https://github.com/lagden/find-in-cache/issues"
   },
   "scripts": {
-    "eslint": "eslint --config .eslintrc.yml --ext .js --ignore-path .gitignore .",
-    "pretest": "npm run eslint",
-    "docker:rm": "docker kill find-cache-redis-test; docker rm find-cache-redis-test",
-    "docker": "docker run -p 6379:6379 --name find-cache-redis-test -d redis:latest",
-    "test": "c8 --reporter=text --reporter=text-summary --reporter=lcovonly --reporter=cobertura node --test test/*.spec.js"
+    "tsc": "tsc",
+    "pretest": "npm run tsc",
+    "docker:rm": "docker kill find-in-cache-redis-test; docker rm find-in-cache-redis-test",
+    "docker": "docker run -p 6379:6379 --name find-in-cache-redis-test -d redis:latest",
+    "test": "c8 --reporter=text --reporter=text-summary --reporter=lcovonly node --test test/*.spec.js"
+  },
+  "peerDependencies": {
+    "@tadashi/cache-redis": ">= 7 < 8",
+    "ioredis": ">= 4.19.4 < 6"
   },
   "dependencies": {
-    "@tadashi/cache-redis": "6.4.1",
-    "@tadashi/common": "4.2.1",
+    "@tadashi/cache-redis": "7.0.1",
+    "@tadashi/common": "4.6.0",
     "@tadashi/hash": "3.0.1"
   },
   "devDependencies": {
-    "c8": "8.0.1",
-    "eslint": "8.55.0",
-    "eslint-plugin-unicorn": "49.0.0",
-    "ioredis": "5.3.2"
+    "@types/node": "22.5.4",
+    "c8": "10.1.2",
+    "ioredis": "5.4.1",
+    "typescript": "5.5.4"
   }
 }
